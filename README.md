@@ -5,6 +5,7 @@
 - Use well known / common types of glitches
 - Bugs and glitches are features rather than accidental
 - Refer to DDLC "glitches"
+- Balance game around exploits (i.e. "infinite" currency, exobitant item pricing)
 
 ## Code
 
