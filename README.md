@@ -7,6 +7,7 @@
 - Refer to DDLC "glitches"
   - Intentional corrupted saves
 - Balance game around exploits (i.e. "infinite" currency glitch, exorbitant item pricing)
+- No A.I. / enemies to fight
 
 ## Code
 
