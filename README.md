@@ -1,5 +1,6 @@
 # Introduction 
 
+- Refers to instability of modern game releases
 - Platformer / escape room game
 - Use "glitches" to progress
 - Use well known / common types of glitches
