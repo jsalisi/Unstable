@@ -23,6 +23,14 @@ _global_script_class_icons={
 config/name="Unstable"
 config/icon="res://icon.png"
 
+[audio]
+
+default_bus_layout=""
+
+[display]
+
+window/dpi/allow_hidpi=true
+
 [gdnative]
 
 singletons=[ "res://git_api.gdnlib" ]
