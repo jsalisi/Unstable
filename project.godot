@@ -30,8 +30,6 @@ default_bus_layout=""
 
 [display]
 
-window/size/width=1600
-window/size/height=900
 window/dpi/allow_hidpi=true
 
 [gdnative]

@@ -18,7 +18,6 @@ size = Vector3( 30, 2, 30 )
 transform = Transform( 0.827502, -0.416026, -0.377044, 0.561463, 0.613153, 0.5557, 0, -0.67154, 0.740969, 0, 10.7633, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Box"]
-transform = Transform( 1, 2.98023e-08, 0, -1.34398e-08, 1, 2.98023e-08, -1.4973e-08, 0, 1, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Box"]
@@ -59,4 +58,4 @@ mesh = SubResource( 4 )
 material/0 = null
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.365747, 2, 6.90108 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0516, 2, 0 )
