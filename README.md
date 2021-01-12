@@ -9,10 +9,9 @@
   - Intentional corrupted saves
 - Balance game around exploits (i.e. "infinite" currency glitch, exorbitant item pricing)
 - No A.I. / enemies to fight
+- Use camera to find hidden secrets
 
-## Code
+## Tools
 
-1. Python
-2. C#
-3. Java
-4. Godot
+1. Godot
+2. Trello
