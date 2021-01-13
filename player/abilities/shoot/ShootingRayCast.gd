@@ -11,10 +11,12 @@ export (Resource) var empty_sound
 export (Resource) var shell_impact_sound
 
 var weapon_sway = 8.0
-var max_ammo = 12
+export var max_ammo = 12
 var shooting_echo = true
 
-var current_ammo = max_ammo
+var current_ammo = 0
+
+onready var ammo_label = $"/root/Level/UI/Label"
 
 var mouse_relative_x = 0
 var mouse_relative_y = 0
@@ -27,6 +29,7 @@ var camera_node
 var can_shoot = true
 
 func _ready():
+	current_ammo = max_ammo
 	$Shoulder/Hand/Nozzle/ShootLight.hide()
 	hand_position = $Shoulder/Hand.translation
 	player = get_tree().get_root().find_node("Player", true, false)
@@ -122,6 +125,12 @@ func spawn_impact():
 	
 	yield(get_tree().create_timer(60), "timeout")
 	impact_instance.queue_free()
+
+func _process(delta):
+	if not $ReloadTween.is_active():
+		ammo_label.set_text("%d / %d" % [current_ammo, max_ammo])
+	else:
+		ammo_label.set_text("RELOADING...")
 
 func _physics_process(delta):
 	# Weapon sway:
