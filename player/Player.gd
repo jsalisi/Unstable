@@ -56,7 +56,11 @@ func _input(event):
 	else:
 		crouch_speed = 1
 		crouch(false)
-	
+		
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)	
+		
 func _physics_process(delta):
 	if is_on_floor():
 		gravity_vec = -get_floor_normal() * stick_amount # The gravity is in the direction of the ground to climb it more easily
