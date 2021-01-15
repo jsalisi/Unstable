@@ -16,7 +16,7 @@ var shooting_echo = true
 
 var current_ammo = 0
 
-onready var ammo_label = $"/root/Level/UI/Label"
+#onready var ammo_label = $"/root/Level/UI/Label"
 
 var mouse_relative_x = 0
 var mouse_relative_y = 0
@@ -126,11 +126,11 @@ func spawn_impact():
 	yield(get_tree().create_timer(60), "timeout")
 	impact_instance.queue_free()
 
-func _process(delta):
-	if not $ReloadTween.is_active():
-		ammo_label.set_text("%d / %d" % [current_ammo, max_ammo])
-	else:
-		ammo_label.set_text("RELOADING...")
+#func _process(delta):
+#	if not $ReloadTween.is_active():
+#		ammo_label.set_text("%d / %d" % [current_ammo, max_ammo])
+#	else:
+#		ammo_label.set_text("RELOADING...")
 
 func _physics_process(delta):
 	# Weapon sway:
