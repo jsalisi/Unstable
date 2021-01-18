@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://levels/assets/textures/3d_tex.tres" type="Material" id=1]
 [ext_resource path="res://levels/assets/textures/3d_tex_orange.tres" type="Material" id=2]
@@ -7,10 +7,6 @@
 
 [sub_resource type="Environment" id=1]
 background_mode = 2
-
-[sub_resource type="PhysicsMaterial" id=2]
-
-[sub_resource type="HeightMapShape" id=3]
 
 [node name="prototype" type="Spatial"]
 
@@ -47,7 +43,6 @@ shadow_enabled = true
 omni_range = 15.0
 
 [node name="Room" type="CSGBox" parent="CSGCombiner/CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 operation = 2
 width = 17.0
 height = 7.8
@@ -55,30 +50,24 @@ depth = 18.0
 material = ExtResource( 1 )
 
 [node name="Hidden Doorway" type="CSGBox" parent="CSGCombiner/CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.999, -2.4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.999, -1.9, 0 )
 operation = 2
 width = 1.0
 height = 4.0
 material = ExtResource( 2 )
 
 [node name="Walkway" type="CSGBox" parent="CSGCombiner/CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.65, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.15, 0 )
 width = 30.0
 height = 0.5
 depth = 30.0
 material = ExtResource( 2 )
 
 [node name="Pine_Tree_01" parent="CSGCombiner" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -0.5, 0 )
-
-[node name="StaticBody" type="StaticBody" parent="CSGCombiner/Pine_Tree_01"]
-physics_material_override = SubResource( 2 )
-
-[node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Pine_Tree_01/StaticBody"]
-shape = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0 )
 
 [node name="Fake Door" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 1.6, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 2.1, 0 )
 width = 0.65
 height = 4.0
 material = ExtResource( 1 )
