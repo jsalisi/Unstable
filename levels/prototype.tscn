@@ -1,16 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://levels/assets/textures/3d_tex.tres" type="Material" id=1]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/assets/textures/3d_tex_orange.tres" type="Material" id=2]
 [ext_resource path="res://levels/assets/LowPolyNaturePack/Trees/Pine_Tree_01.fbx" type="PackedScene" id=3]
-[ext_resource path="res://levels/assets/textures/3d_tex_orange.tres" type="Material" id=4]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Environment" id=1]
 background_mode = 2
-
-[sub_resource type="CylinderShape" id=2]
-
-[sub_resource type="CylinderMesh" id=3]
 
 [node name="prototype" type="Spatial"]
 
@@ -27,7 +23,7 @@ light_energy = 2.0
 shadow_enabled = true
 omni_range = 15.0
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -7, 1, 0 )
 
 [node name="CSGCombiner" type="CSGCombiner" parent="."]
@@ -59,26 +55,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.999, -2.4, 0 )
 operation = 2
 width = 1.0
 height = 4.0
-material = ExtResource( 4 )
+material = ExtResource( 2 )
 
 [node name="Walkway" type="CSGBox" parent="CSGCombiner/CSGBox"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.65, 0 )
 width = 30.0
 height = 0.5
 depth = 30.0
-material = ExtResource( 4 )
+material = ExtResource( 2 )
 
 [node name="Pine_Tree_01" parent="CSGCombiner" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.51, -0.43, 11.31 )
-
-[node name="RigidBody" type="RigidBody" parent="CSGCombiner/Pine_Tree_01"]
-
-[node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Pine_Tree_01/RigidBody"]
-shape = SubResource( 2 )
-
-[node name="MeshInstance" type="MeshInstance" parent="CSGCombiner/Pine_Tree_01/RigidBody"]
-mesh = SubResource( 3 )
-material/0 = null
 
 [node name="Fake Door" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 1.6, 0 )
