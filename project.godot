@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Unstable"
-run/main_scene="res://prototype.tscn"
+run/main_scene="res://levels/prototype/prototype.tscn"
 config/icon="res://icon.png"
 
 [audio]
