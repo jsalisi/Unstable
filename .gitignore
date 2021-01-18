@@ -1,7 +1,2 @@
 # Godot Import files
-.import
-
-# Godot VCS Extension
-bin
-git_api.gdnlib
-git_api.gdns
+*.import
