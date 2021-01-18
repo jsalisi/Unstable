@@ -1,12 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/assets/textures/3d_tex.tres" type="Material" id=1]
 [ext_resource path="res://levels/assets/textures/3d_tex_orange.tres" type="Material" id=2]
-[ext_resource path="res://levels/assets/LowPolyNaturePack/Trees/Pine_Tree_01.fbx" type="PackedScene" id=3]
+[ext_resource path="res://levels/assets/LowPolyNaturePack/Pine_Tree_01.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Environment" id=1]
 background_mode = 2
+
+[sub_resource type="PhysicsMaterial" id=3]
+
+[sub_resource type="HeightMapShape" id=2]
+
+[sub_resource type="PhysicsMaterial" id=5]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.5, 0.5, 0.5 )
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 0.5, 0.5, 0.5 )
 
 [node name="prototype" type="Spatial"]
 
@@ -65,7 +77,24 @@ depth = 30.0
 material = ExtResource( 2 )
 
 [node name="Pine_Tree_01" parent="CSGCombiner" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.51, -0.43, 11.31 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="CSGCombiner/Pine_Tree_01"]
+physics_material_override = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/Pine_Tree_01/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="RigidBody" type="RigidBody" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79, 4.83, 0 )
+physics_material_override = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="CSGCombiner/RigidBody"]
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CSGCombiner/RigidBody"]
+mesh = SubResource( 6 )
+material/0 = null
 
 [node name="Fake Door" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.75, 1.6, 0 )
