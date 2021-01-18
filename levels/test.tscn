@@ -67,7 +67,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UI"]
+[node name="ammo_label" type="Label" parent="UI"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0

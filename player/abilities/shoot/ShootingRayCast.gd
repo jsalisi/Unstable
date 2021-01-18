@@ -16,7 +16,8 @@ var shooting_echo = true
 
 var current_ammo = 0
 
-onready var ammo_label = $"/root/prototype/UI/Label"
+#onready var ammo_label = $"/root/prototype/UI/ammo_label"
+onready var ammo_label = get_tree().get_root().find_node("ammo_label", true, false)
 
 var mouse_relative_x = 0
 var mouse_relative_y = 0
