@@ -1,6 +1,7 @@
 [gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[ext_resource path="res://levels/assets/textures/Dark/texture_06.png" type="Texture" id=1]
+[ext_resource path="res://scenes/assets/textures/Dark/texture_06.png" type="Texture" id=1]
+
 
 
 [resource]
