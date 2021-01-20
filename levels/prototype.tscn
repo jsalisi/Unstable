@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://levels/assets/textures/3d_tex.tres" type="Material" id=1]
 [ext_resource path="res://levels/assets/textures/3d_tex_orange.tres" type="Material" id=2]
 [ext_resource path="res://levels/assets/LowPolyNaturePack/Pine_Tree_01.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/assets/LowPolyNaturePack/Glitch_Tree.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Environment" id=1]
 background_mode = 2
@@ -64,6 +65,9 @@ depth = 30.0
 material = ExtResource( 2 )
 
 [node name="Pine_Tree_01" parent="CSGCombiner" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
+
+[node name="Glitch_tree" parent="CSGCombiner" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0 )
 
 [node name="Fake Door" type="CSGBox" parent="."]

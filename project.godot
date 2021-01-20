@@ -19,18 +19,6 @@ config/name="Unstable"
 run/main_scene="res://levels/prototype.tscn"
 config/icon="res://icon.png"
 
-[audio]
-
-default_bus_layout=""
-
-[display]
-
-window/dpi/allow_hidpi=true
-
-[gdnative]
-
-singletons=[  ]
-
 [rendering]
 
 environment/default_environment="res://default_env.tres"
