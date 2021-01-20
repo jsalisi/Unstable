@@ -1,2 +1,5 @@
-# Godot Import files
+# Godot Import Files
 *.import
+
+# Godot Build Files
+builds
