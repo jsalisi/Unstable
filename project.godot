@@ -13,21 +13,16 @@ _global_script_classes=[ {
 "class": "Interactable",
 "language": "GDScript",
 "path": "res://levels/world/Interactable.gd"
-}, {
-"base": "Spatial",
-"class": "Weapon",
-"language": "GDScript",
-"path": "res://player/Weapon.gd"
 } ]
 _global_script_class_icons={
-"Interactable": "",
-"Weapon": ""
+"Interactable": ""
 }
 
 [application]
 
 config/name="Unstable"
-run/main_scene="res://scenes/portal.tscn"
+config/description="Press G for level reset"
+run/main_scene="res://levels/world/World.tscn"
 config/icon="res://icon.png"
 
 [input]

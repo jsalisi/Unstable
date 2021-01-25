@@ -205,5 +205,22 @@ grow_vertical = 2
 texture = ExtResource( 2 )
 stretch_mode = 4
 
+[node name="Label2" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -164.0
+margin_top = 1.0
+margin_right = 2.0
+margin_bottom = 212.0
+text = "Controls:
+
+	WASD - Move
+	Left Click - Fire
+	R - Reload
+	G - Reset Level
+"
+align = 3
+valign = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )

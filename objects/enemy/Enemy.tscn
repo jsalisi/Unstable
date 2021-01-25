@@ -2,7 +2,6 @@
 
 [ext_resource path="res://objects/enemy/Enemy.gd" type="Script" id=1]
 
-
 [sub_resource type="CapsuleMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
