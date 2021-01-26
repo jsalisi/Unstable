@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/assets/crosshair.png" type="Texture" id=2]
+[ext_resource path="res://default_env.tres" type="Environment" id=3]
+
+[node name="World" type="Spatial"]
+
+[node name="halway" type="Spatial" parent="."]
+
+[node name="Ground" type="GridMap" parent="halway"]
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 3, 0 )
+}
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000299633, 13.6356, 24.0016 )
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -79.0
+margin_top = -36.0
+margin_right = -8.0
+margin_bottom = -5.0
+text = "Ammo
+2/2"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractionLabel" type="Label" parent="UI"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -31.0
+text = "Press E to interact"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="UI/CenterContainer"]
+margin_left = 504.0
+margin_top = 292.0
+margin_right = 520.0
+margin_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Label2" type="Label" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -164.0
+margin_top = 1.0
+margin_right = 2.0
+margin_bottom = 212.0
+text = "Controls:
+
+	WASD - Move
+	Left Click - Fire
+	Space - Jump
+	R - Reload
+	G - Reset Level
+"
+align = 3
+valign = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 3 )
