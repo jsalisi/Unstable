@@ -1,13 +1,21 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://levels/assets/textures/3d_tex.tres" type="Material" id=1]
 [ext_resource path="res://levels/assets/textures/3d_tex_orange.tres" type="Material" id=2]
 [ext_resource path="res://levels/assets/LowPolyNaturePack/Pine_Tree_01.tscn" type="PackedScene" id=3]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://levels/assets/LowPolyNaturePack/Glitch_Tree.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/Resources/Play Button.png" type="Texture" id=6]
+[ext_resource path="res://levels/UI.gd" type="Script" id=7]
+[ext_resource path="res://UI/Resources/Home Square Button.png" type="Texture" id=8]
+[ext_resource path="res://UI/Resources/Return Square Button.png" type="Texture" id=9]
+[ext_resource path="res://UI/Resources/Options Button.png" type="Texture" id=10]
+[ext_resource path="res://UI/Resources/Quit Button.png" type="Texture" id=11]
 
 [sub_resource type="Environment" id=1]
 background_mode = 2
+
+[sub_resource type="ImageTexture" id=2]
 
 [node name="prototype" type="Spatial"]
 
@@ -31,7 +39,7 @@ transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -7, 1, 
 use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.226313, 4.03159, 0.103968 )
 width = 18.0
 height = 10.0
 depth = 20.0
@@ -79,6 +87,10 @@ material = ExtResource( 1 )
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 4.0
+margin_right = -1.0
+margin_bottom = 2.0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,3 +104,73 @@ margin_bottom = 595.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GameMenu" type="Control" parent="UI"]
+pause_mode = 2
+visible = false
+margin_left = -2.0
+margin_top = -1.0
+margin_right = 1021.0
+margin_bottom = 603.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/GameMenu"]
+margin_left = 386.47
+margin_top = 100.183
+margin_right = 668.47
+margin_bottom = 503.183
+texture = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play Button" type="TextureButton" parent="UI/GameMenu/NinePatchRect"]
+margin_left = 27.8948
+margin_top = 29.6152
+margin_right = 251.895
+margin_bottom = 107.615
+texture_normal = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options Button" type="TextureButton" parent="UI/GameMenu/NinePatchRect"]
+margin_left = 29.0173
+margin_top = 127.269
+margin_right = 253.017
+margin_bottom = 205.269
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit Button" type="TextureButton" parent="UI/GameMenu/NinePatchRect"]
+margin_left = 29.184
+margin_top = 224.492
+margin_right = 253.184
+margin_bottom = 302.492
+texture_normal = ExtResource( 11 )
+expand = true
+
+[node name="Restart Button" type="TextureButton" parent="UI/GameMenu/NinePatchRect"]
+margin_left = 30.8775
+margin_top = 313.755
+margin_right = 119.878
+margin_bottom = 379.755
+texture_normal = ExtResource( 9 )
+expand = true
+
+[node name="Home Button" type="TextureButton" parent="UI/GameMenu/NinePatchRect"]
+margin_left = 159.96
+margin_top = 313.755
+margin_right = 248.96
+margin_bottom = 379.755
+texture_normal = ExtResource( 8 )
+expand = true
+[connection signal="pressed" from="UI/GameMenu/NinePatchRect/Play Button" to="UI" method="_on_Play_Button_pressed"]
+[connection signal="pressed" from="UI/GameMenu/NinePatchRect/Quit Button" to="UI" method="_on_Quit_Button_pressed"]
+[connection signal="pressed" from="UI/GameMenu/NinePatchRect/Restart Button" to="UI" method="_on_Restart_Button_pressed"]
