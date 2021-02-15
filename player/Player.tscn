@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Interaction.gd" type="Script" id=2]
-[ext_resource path="res://Player/Weapon.gd" type="Script" id=3]
-[ext_resource path="res://objects/assets/mp5/Gun.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/GunCamera.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -34,16 +32,6 @@ enabled = true
 cast_to = Vector3( 0, 0, -2 )
 collision_mask = 2
 script = ExtResource( 2 )
-
-[node name="Weapons" type="Spatial" parent="Head/Camera"]
-
-[node name="mp5" parent="Head/Camera/Weapons" instance=ExtResource( 4 )]
-transform = Transform( -8.14603e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -8.14603e-08, 0.56, -0.479, -1.037 )
-script = ExtResource( 3 )
-default_position = Vector3( 0.56, -0.479, -1.037 )
-ads_position = Vector3( 0, -0.5, -0.9 )
-raycast_path = NodePath("../../RayCast")
-camera_path = NodePath("../..")
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
