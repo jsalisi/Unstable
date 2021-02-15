@@ -2,7 +2,7 @@ extends RayCast
 
 var current_collider
 
-onready var interaction_label = get_node("/root/World/UI/InteractionLabel")
+onready var interaction_label = get_node("/root/Ward/UI/InteractionLabel")
 
 func _ready():
 	set_interaction_text("")
