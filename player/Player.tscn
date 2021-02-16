@@ -21,7 +21,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919402, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.39062 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103388, 0.39062 )
 
 [node name="RayCast" type="RayCast" parent="Head/Camera"]
 enabled = true
