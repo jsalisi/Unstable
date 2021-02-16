@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://objects/bed/Tex.png" type="Texture" id=5]
 [ext_resource path="res://objects/door/16667_32x96_Slab_Door-Cherry_V1.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://levels/assets/audio/room_1_background_audio.ogg" type="AudioStream" id=7]
+[ext_resource path="res://levels/ward/Walls.tscn" type="PackedScene" id=8]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.878431, 0.882353, 0.901961, 1 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 5 )
@@ -27,7 +31,8 @@ autoplay = true
 [node name="Environment" type="Spatial" parent="."]
 
 [node name="Room" type="CSGBox" parent="Environment"]
-transform = Transform( -0.695651, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
+transform = Transform( -2.12065, 0, 0, 0, 0.72644, 0, 0, 0, 2.85343, -21.6778, 3.79902, -54.9106 )
+material_override = SubResource( 4 )
 use_collision = true
 invert_faces = true
 width = 30.0904
@@ -178,8 +183,128 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Environment/Bed12/StaticBody"]
 shape = SubResource( 2 )
 
+[node name="Bed13" type="MeshInstance" parent="Environment"]
+transform = Transform( -0.985842, -0.0615367, -0.0965319, -0.0823225, 0.962626, 0.227076, 0.0795499, 0.233567, -0.961305, -8.2551, -0.0668125, 20.8677 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed13/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Bed14" type="MeshInstance" parent="Environment"]
+transform = Transform( -0.397524, 0.176442, -0.892094, -0.462239, 0.799242, 0.364055, 0.783134, 0.56131, -0.237952, -8.38927, -1.24269, 22.7365 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed14"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed14/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Bed15" type="MeshInstance" parent="Environment"]
+transform = Transform( 0.114164, 0.459599, -0.872195, -0.93816, -0.219209, -0.238309, -0.303002, 0.851883, 0.409235, -9.09838, 1.66034, 23.936 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed15"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed15/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Bed16" type="MeshInstance" parent="Environment"]
+transform = Transform( 0.224917, -0.596773, 0.760436, 0.235353, -0.723447, -0.637356, 0.937555, 0.32477, -0.0224329, -9.09838, 1.66034, 19.9297 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed16/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Bed18" type="MeshInstance" parent="Environment"]
+transform = Transform( -0.53386, -0.61987, 0.561911, -0.704005, -0.0273343, -0.699013, 0.452063, -0.774599, -0.425001, -10.0322, 5.10742, 20.9772 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed18"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed18/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Bed19" type="MeshInstance" parent="Environment"]
+transform = Transform( 0.506149, -0.796042, -0.308412, -0.826166, -0.547067, 0.0561764, -0.215062, 0.228085, -0.941656, -10.0322, 5.10742, 23.447 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed19"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed19/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Bed20" type="MeshInstance" parent="Environment"]
+transform = Transform( -0.145658, 0.446026, 0.874548, 0.168151, 0.882391, -0.42202, -0.967212, 0.0862359, -0.205072, -9.59891, 3.56136, 25.2307 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed20"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed20/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Environment/Bed20/StaticBody"]
+transform = Transform( 0.673646, 0.343448, -0.654404, 0.0934162, 0.838791, 0.536381, 0.733127, -0.422464, 0.532964, 0.155785, -0.477065, -0.93541 )
+shape = SubResource( 2 )
+
+[node name="Bed22" type="MeshInstance" parent="Environment"]
+transform = Transform( -0.915711, 0.34667, 0.16212, 0.192845, 0.781126, -0.58107, -0.330565, -0.50463, -0.788076, -8.56571, 3.69437, 23.6259 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed22"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed22/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Bed21" type="MeshInstance" parent="Environment"]
+transform = Transform( -0.283033, 0.313822, -0.897996, -0.243386, 0.881827, 0.384882, 0.91959, 0.32998, -0.174521, -9.56312, 5.3308, 18.6899 )
+material_override = SubResource( 1 )
+use_in_baked_light = true
+mesh = ExtResource( 4 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Environment/Bed21"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/Bed21/StaticBody"]
+shape = SubResource( 2 )
+
 [node name="Door" type="MeshInstance" parent="Environment"]
-transform = Transform( 0.03, 0, -1.26762e-15, 1.59259e-15, 4.88762e-09, 0.0238784, 0, -0.03, 3.89029e-09, 0.350721, 0.789473, -29.1091 )
+transform = Transform( 0.03, 0, -1.26762e-15, 1.59259e-15, 4.88762e-09, 0.0238784, 0, -0.03, 3.89029e-09, 0.350721, 0.789473, -31.1765 )
+mesh = ExtResource( 6 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="Door2" type="MeshInstance" parent="Environment"]
+transform = Transform( 0.03, 0, -1.26762e-15, 1.59259e-15, 4.88762e-09, 0.0238784, 0, -0.03, 3.89029e-09, 0.350721, 0.789473, -31.8748 )
 mesh = ExtResource( 6 )
 material/0 = null
 material/1 = null
@@ -190,6 +315,9 @@ material/3 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
 light_energy = 0.38
 omni_range = 42.0
+
+[node name="Walls" parent="Environment" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.7995 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[node name="Walls" type="Spatial"]
+
+[node name="fakeWall" type="CSGBox" parent="."]
+transform = Transform( 0.318916, 0, 0, 0, 1.61789, 0, 0, 0, 33.3641, -11.4284, 3.9058, -20.0844 )
+height = 11.603
+depth = 1.78833
+
+[node name="blackWall" type="CSGBox" parent="."]
+transform = Transform( -0.92723, 0, 0, 0, -1.56227, 0, 0, 0, 36.0623, -12.0744, 3.9058, -16.7827 )
+material_override = SubResource( 1 )
+invert_faces = true
+height = 11.603
+depth = 1.78833
+
+[node name="fakeWall3" type="CSGBox" parent="."]
+transform = Transform( 0.001, 0, 0, 0, 1.693, 0, 0, 0, 36.062, -13.1535, 3.90554, -20.0844 )
+height = 11.603
+depth = 1.78833
+
+[node name="realWall" type="CSGBox" parent="."]
+transform = Transform( 0.318916, 0, 0, 0, 1.61789, 0, 0, 0, 36.0623, -11.4284, 3.9058, -20.0844 )
+use_collision = true
+height = 11.603
+depth = 1.78833
+
+[node name="Hole" type="CSGBox" parent="realWall"]
+transform = Transform( 10.8814, 0, 0, 0, 5.16179, 0, 0, 0, 0.111406, -0.313061, 4.91054, 0.675402 )
+operation = 2
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+transform = Transform( -1.1781e-08, 0, -14.7388, 0, 1.31754, 0, 0.383434, 0, -9.16556e-07, 5.64355, 4.64666, -52.3318 )
+snap = 0.07
+use_collision = true
+height = 13.8235
+depth = 2.5547
