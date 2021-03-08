@@ -1,40 +1,31 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0, 0, 0, 1 )
+[ext_resource path="res://objects/door/16667_32x96_Slab_Door-Cherry_V1.obj" type="ArrayMesh" id=1]
 
-[node name="Walls" type="Spatial"]
+[node name="walls" type="Spatial"]
 
-[node name="fakeWall" type="CSGBox" parent="."]
-transform = Transform( 0.318916, 0, 0, 0, 1.61789, 0, 0, 0, 33.3641, -11.4284, 3.9058, -20.0844 )
-height = 11.603
-depth = 1.78833
-
-[node name="blackWall" type="CSGBox" parent="."]
-transform = Transform( -0.92723, 0, 0, 0, -1.56227, 0, 0, 0, 36.0623, -12.0744, 3.9058, -16.7827 )
-material_override = SubResource( 1 )
-invert_faces = true
-height = 11.603
-depth = 1.78833
-
-[node name="fakeWall3" type="CSGBox" parent="."]
-transform = Transform( 0.001, 0, 0, 0, 1.693, 0, 0, 0, 36.062, -13.1535, 3.90554, -20.0844 )
-height = 11.603
-depth = 1.78833
-
-[node name="realWall" type="CSGBox" parent="."]
-transform = Transform( 0.318916, 0, 0, 0, 1.61789, 0, 0, 0, 36.0623, -11.4284, 3.9058, -20.0844 )
+[node name="Side Wall" type="CSGBox" parent="."]
+transform = Transform( -0.248398, 2.53107e-07, 0, -2.17156e-08, -2.89521, 0, 0, 0, 16.8674, 1.08193e-07, 4.67359, 0 )
 use_collision = true
-height = 11.603
-depth = 1.78833
 
-[node name="Hole" type="CSGBox" parent="realWall"]
-transform = Transform( 10.8814, 0, 0, 0, 5.16179, 0, 0, 0, 0.111406, -0.313061, 4.91054, 0.675402 )
-operation = 2
-
-[node name="CSGBox2" type="CSGBox" parent="."]
-transform = Transform( -1.1781e-08, 0, -14.7388, 0, 1.31754, 0, 0.383434, 0, -9.16556e-07, 5.64355, 4.64666, -52.3318 )
-snap = 0.07
+[node name="Side Wall3" type="CSGBox" parent="."]
+transform = Transform( -0.248, 9.08693e-07, 0, -3.7447e-08, -6.018, 0, 0, 0, 13.0228, -0.0156994, 5.8388, -2.11224 )
 use_collision = true
-height = 13.8235
-depth = 2.5547
+
+[node name="Side Wall Fake" type="CSGBox" parent="."]
+transform = Transform( -0.248398, 0, 0, 0, -6.01831, 0, 0, 0, 16.8674, 0, 5.91117, 0 )
+
+[node name="Ceiling" type="CSGBox" parent="."]
+transform = Transform( 1.87535e-08, -16.5626, 0, 0.248398, 1.25044e-06, 0, 0, 0, 16.8674, 16.3117, 11.695, 0 )
+
+[node name="Side Wall2" type="CSGBox" parent="."]
+transform = Transform( 2.25801e-09, 6.8608e-14, -16.8674, 4.51602e-09, -6.01831, -1.9154e-19, -0.0299082, -9.0874e-07, -1.27345e-06, 16.8655, 5.91033, -16.6196 )
+use_collision = true
+
+[node name="Door" type="MeshInstance" parent="."]
+transform = Transform( 0.0380384, 1.06959e-08, -2.00573e-16, 0, 3.09633e-09, 0.0303887, -5.74364e-09, 0.0708359, -1.32833e-09, 18.3057, 3.36188, -16.6305 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null

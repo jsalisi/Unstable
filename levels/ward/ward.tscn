@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/assets/crosshair.png" type="Texture" id=3]
+[ext_resource path="res://levels/ward/walls.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/bed/Bed_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://levels/assets/audio/room_1_background_audio.ogg" type="AudioStream" id=7]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.878431, 0.882353, 0.901961, 1 )
+albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 
 [node name="Ward" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000299633, 0, 14.9359 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8291, 0, 35.4385 )
 
 [node name="BackgroundNoise" type="AudioStreamPlayer" parent="Player"]
 pause_mode = 2
@@ -21,7 +23,7 @@ autoplay = true
 [node name="Environment" type="Spatial" parent="."]
 
 [node name="Room" type="CSGBox" parent="Environment"]
-transform = Transform( -2.12065, 0, 0, 0, 1.52588, 0, 0, 0, 1.64285, -21.6778, 9.32395, -25.2009 )
+transform = Transform( -2.12065, 0, 0, 0, 1.52588, 0, 0, 0, 1.75905, -7.87331, 9.32395, -14.6346 )
 material_override = SubResource( 1 )
 use_collision = true
 invert_faces = true
@@ -30,9 +32,17 @@ height = 16.0
 depth = 58.3392
 
 [node name="Light Bulb" type="OmniLight" parent="Environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -7.40202 )
 light_energy = 0.38
 omni_range = 42.0
+
+[node name="walls" parent="Environment" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76717, -3.60081, 20.1052 )
+
+[node name="props" type="Spatial" parent="Environment"]
+
+[node name="Bed_1" parent="Environment/props" instance=ExtResource( 5 )]
+transform = Transform( 0.726774, 0, 0, 0, 0.822742, 0, 0, 0, 0.799545, 20.0328, -1.20433, 33.1133 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
