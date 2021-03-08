@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/assets/crosshair.png" type="Texture" id=3]
 [ext_resource path="res://levels/ward/walls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/bed/Bed_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/bed/Hospital_Screen.tscn" type="PackedScene" id=6]
 [ext_resource path="res://levels/assets/audio/room_1_background_audio.ogg" type="AudioStream" id=7]
+[ext_resource path="res://objects/trolley/Medical Trolley.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/shelving/Shelving .tscn" type="PackedScene" id=9]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
@@ -37,12 +40,62 @@ light_energy = 0.38
 omni_range = 42.0
 
 [node name="walls" parent="Environment" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76717, -3.60081, 20.1052 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76717, -4.22339, 14.1238 )
 
 [node name="props" type="Spatial" parent="Environment"]
 
-[node name="Bed_1" parent="Environment/props" instance=ExtResource( 5 )]
-transform = Transform( 0.726774, 0, 0, 0, 0.822742, 0, 0, 0, 0.799545, 20.0328, -1.20433, 33.1133 )
+[node name="Medical Trolley" parent="Environment/props" instance=ExtResource( 8 )]
+transform = Transform( -8.04633e-08, 0, 0.75, 0, 0.7, 0, -0.75, 0, -8.04633e-08, -0.759078, -1.83433, -10.0581 )
+
+[node name="Shelving " parent="Environment/props" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.59769, 1.34327, -4.3225 )
+
+[node name="Shelving 2" parent="Environment/props" instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.59769, 1.34327, -8.16867 )
+
+[node name="Row 1" type="Spatial" parent="Environment/props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.48227e-05, -0.0265496, -0.000761032 )
+
+[node name="Bed_1" parent="Environment/props/Row 1" instance=ExtResource( 5 )]
+transform = Transform( 0.726774, 0, 0, 0, 0.709662, 0, 0, 0, 0.880002, 19.8229, -1.52244, 32.5976 )
+
+[node name="Bed_2" parent="Environment/props/Row 1" instance=ExtResource( 5 )]
+transform = Transform( 0.726774, 0, 0, 0, 0.709662, 0, 0, 0, 0.880002, 19.8229, -1.52244, 19.8018 )
+
+[node name="Bed_3" parent="Environment/props/Row 1" instance=ExtResource( 5 )]
+transform = Transform( 0.726774, 0, 0, 0, 0.709662, 0, 0, 0, 0.880002, 19.8229, -1.52244, 5.68799 )
+
+[node name="Bed_4" parent="Environment/props/Row 1" instance=ExtResource( 5 )]
+transform = Transform( 0.726774, 0, 0, 0, 0.709662, 0, 0, 0, 0.880002, 19.8229, -1.52244, -7.10778 )
+
+[node name="Hospital_Screen" parent="Environment/props/Row 1" instance=ExtResource( 6 )]
+transform = Transform( 3, 0, 0, 0, 1.75, 0, 0, 0, 2, 19.2582, -2.88919, -0.597292 )
+
+[node name="Hospital_Screen2" parent="Environment/props/Row 1" instance=ExtResource( 6 )]
+transform = Transform( 3, 0, 0, 0, 1.75, 0, 0, 0, 2, 19.2582, -2.88919, 11.697 )
+
+[node name="Hospital_Screen3" parent="Environment/props/Row 1" instance=ExtResource( 6 )]
+transform = Transform( 3, 0, 0, 0, 1.75, 0, 0, 0, 2, 19.2582, -2.88919, 26.1632 )
+
+[node name="Row 2" type="Spatial" parent="Environment/props"]
+
+[node name="Bed_6" parent="Environment/props/Row 2" instance=ExtResource( 5 )]
+transform = Transform( -0.726774, 0, 7.69322e-08, 0, 0.709662, 0, -6.35366e-08, 0, -0.880002, -3.65338, -1.52244, 5.68799 )
+
+[node name="Bed_7" parent="Environment/props/Row 2" instance=ExtResource( 5 )]
+transform = Transform( -0.726774, 0, 7.69322e-08, 0, 0.709662, 0, -6.35366e-08, 0, -0.880002, -3.65338, -1.52244, 19.8018 )
+
+[node name="Bed_8" parent="Environment/props/Row 2" instance=ExtResource( 5 )]
+transform = Transform( -0.726774, 0, 7.69322e-08, 0, 0.709662, 0, -6.35366e-08, 0, -0.880002, -3.65338, -1.52244, 32.5976 )
+
+[node name="Hospital_Screen4" parent="Environment/props/Row 2" instance=ExtResource( 6 )]
+transform = Transform( -3, 0, 3.01992e-07, 0, 1.75, 0, -4.52987e-07, 0, -2, -3.08861, -2.88919, 26.0871 )
+
+[node name="Hospital_Screen5" parent="Environment/props/Row 2" instance=ExtResource( 6 )]
+transform = Transform( -3, 0, 3.01992e-07, 0, 1.75, 0, -4.52987e-07, 0, -2, -3.08861, -2.88919, 13.7928 )
+
+[node name="Hospital_Screen6" parent="Environment/props/Row 2" instance=ExtResource( 6 )]
+transform = Transform( -3, 0, 3.01992e-07, 0, 1.75, 0, -4.52987e-07, 0, -2, -3.08861, -2.88919, -0.673463 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
