@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://objects/trolley/Medical Trolley.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/shelving/Shelving .tscn" type="PackedScene" id=9]
 [ext_resource path="res://objects/horse/horse.glb" type="PackedScene" id=10]
+[ext_resource path="res://objects/prison/prison.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
@@ -123,7 +124,10 @@ transform = Transform( -8.04633e-08, 0, 0.75, -0.619677, 0.394327, -6.64817e-08,
 transform = Transform( 0.0556963, -0.0737529, 0.872634, 0.410535, 0.584812, 0.0375863, -0.597126, 0.39519, 0.107235, -1.41129, -0.245359, -1.25644 )
 
 [node name="horse" parent="Environment/props" instance=ExtResource( 10 )]
-transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 15.1128, 6.68275, 8.1146 )
+transform = Transform( 0.0874163, 0, -0.121895, 0, 0.15, 0, 0.121895, 0, 0.0874163, 15.1128, 6.68275, 8.1146 )
+
+[node name="prison" parent="Environment" instance=ExtResource( 11 )]
+transform = Transform( -1.22392e-07, 0, 2.8, 0, 2.8, 0, -2.8, 0, -1.22392e-07, -40.3125, -2.60567, 26.111 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
