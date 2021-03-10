@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://levels/assets/audio/room_1_background_audio.ogg" type="AudioStream" id=7]
 [ext_resource path="res://objects/trolley/Medical Trolley.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/shelving/Shelving .tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/horse/horse.glb" type="PackedScene" id=10]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
@@ -16,11 +17,12 @@ albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 [node name="Ward" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9497, 0, 27.2182 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5121, 0.0128722, 5.64039 )
 
 [node name="BackgroundNoise" type="AudioStreamPlayer" parent="Player"]
 pause_mode = 2
 stream = ExtResource( 7 )
+volume_db = 1.325
 autoplay = true
 
 [node name="Environment" type="Spatial" parent="."]
@@ -35,11 +37,13 @@ height = 16.0
 depth = 58.3392
 
 [node name="Light Bulb" type="OmniLight" parent="Environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.17013, 0.234264, -11.781 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2041, -0.100565, -12.7941 )
 light_color = Color( 0.188235, 0.458824, 0.458824, 1 )
-light_energy = 1.26
-light_indirect_energy = 8.51
-omni_range = 42.0
+light_energy = 10.62
+light_indirect_energy = 0.0
+light_specular = 0.4
+omni_range = 7.3
+omni_attenuation = 2.63901
 
 [node name="walls" parent="Environment" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.90688, -4.22339, 12.7331 )
@@ -53,7 +57,7 @@ transform = Transform( -8.04633e-08, 0, 0.75, 0, 0.7, 0, -0.75, 0, -8.04633e-08,
 transform = Transform( -8.04633e-08, 0, 0.75, 0, 0.7, 0, -0.75, 0, -8.04633e-08, 2.18958, -1.83433, -11.7806 )
 
 [node name="Medical Trolley2" parent="Environment/props" instance=ExtResource( 8 )]
-transform = Transform( -8.04633e-08, 0, 0.75, 0, 0.7, 0, -0.75, 0, -8.04633e-08, 22.9261, -1.83433, 15.4386 )
+transform = Transform( -8.04633e-08, 0, 0.75, 0, 0.7, 0, -0.75, 0, -8.04633e-08, 22.9261, -1.83433, 1.3695 )
 
 [node name="Shelving " parent="Environment/props" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.6768, 1.34327, -4.7512 )
@@ -117,6 +121,9 @@ transform = Transform( -8.04633e-08, 0, 0.75, -0.619677, 0.394327, -6.64817e-08,
 
 [node name="Bed_5" parent="Environment/props/tower" instance=ExtResource( 5 )]
 transform = Transform( 0.0556963, -0.0737529, 0.872634, 0.410535, 0.584812, 0.0375863, -0.597126, 0.39519, 0.107235, -1.41129, -0.245359, -1.25644 )
+
+[node name="horse" parent="Environment/props" instance=ExtResource( 10 )]
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 15.1128, 6.68275, 8.1146 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
