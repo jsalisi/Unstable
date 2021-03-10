@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/door/16667_32x96_Slab_Door-Cherry_V1.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://levels/assets/textures/Floor and Wall/wardwall.jpg" type="Texture" id=2]
-[ext_resource path="res://levels/assets/textures/Floor and Wall/wardFloorTile.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/assets/textures/Floor and Wall/wardwall.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/assets/textures/Floor and Wall/wardFloorTile.jpg" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )

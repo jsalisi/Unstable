@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "Interactable",
 "language": "GDScript",
-"path": "res://levels/ward/Interactable.gd"
+"path": "res://scenes/ward/Interactable.gd"
 } ]
 _global_script_class_icons={
 "Interactable": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Unstable"
-run/main_scene="res://levels/ward/ward.tscn"
+run/main_scene="res://scenes/ward/ward.tscn"
 config/icon="res://icon.png"
 
 [input]
