@@ -1,5 +1,7 @@
 # Godot Import Files
 *.import
+export.cfg
+export_presets.cfg
 
 # Godot Build Files
 builds

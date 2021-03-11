@@ -5,9 +5,9 @@ extends KinematicBody
 var time : int = 100
 
 # Physics
-var moveSpeed : float = 5.0
-var jumpForce : float = 5.0
-var gravity : float = 12.0
+var moveSpeed : float = 8.0
+var jumpForce : float = 10.0
+var gravity : float = 25.0
 
 # Camera Angles
 var minLookAngle : float = -90.0
@@ -37,9 +37,9 @@ func _physics_process(delta):
 	var input = Vector2()
 
 	# Movement inputs
-	if Input.is_action_pressed("move_fwd"):
+	if Input.is_action_pressed("move_forward"):
 		input.y -= 1
-	if Input.is_action_pressed("move_bwd"):
+	if Input.is_action_pressed("move_backward"):
 		input.y += 1
 	if Input.is_action_pressed("move_left"):
 		input.x -= 1
@@ -81,7 +81,13 @@ func _process(delta):
 	
 	# Reset mouse delta vector
 	mouseDelta = Vector2()
-
+	
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
+		
 func _input(event):
 	
 	if event is InputEventMouseMotion:

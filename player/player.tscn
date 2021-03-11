@@ -35,7 +35,6 @@ current = true
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.11, 0 )
-light_energy = 0.823333
 shadow_enabled = true
 omni_range = 14.44
 
