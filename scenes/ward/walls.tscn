@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://objects/door/window_door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/assets/textures/Floor and Wall/wardwall.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/assets/textures/Floor and Wall/wardFloorTile.jpg" type="Texture" id=3]
+[ext_resource path="res://objects/Interactable/interactableLockedDoor.gd" type="Script" id=4]
+[ext_resource path="res://objects/assets/sounds/locked_door.ogg" type="AudioStream" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 3.6226, 0.37343 )
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 3 )
@@ -50,13 +55,21 @@ material_override = SubResource( 1 )
 use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="Side Wall2"]
-transform = Transform( 17.5525, 0.000382994, 0.000408052, 1.63104e-08, 1, 4.02084e-13, 1.28292e-09, 2.96844e-14, 1, 2.47662, 0.500041, -0.0112367 )
+transform = Transform( 17.5525, 0.000382994, 0.000408052, 1.63104e-08, 1, 4.02084e-13, 1.28292e-09, 2.96844e-14, 1, 2.47662, 0.551279, -0.0112367 )
 operation = 2
 height = 0.86195
 depth = 0.152132
 
-[node name="window_door" parent="Side Wall2" instance=ExtResource( 1 )]
-transform = Transform( 1.69968e-06, 5.04864e-06, -33.4356, 1.67482e-15, -0.218195, -3.29466e-08, -0.068947, -9.05377e-22, -2.59147e-09, -4.54968, 0.869999, -0.0164346 )
+[node name="window_door" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 1.35091e-20, 1.24345e-13, -2.59111e-20, 0.999999, 3.97904e-13, 5.32907e-14, -2.41585e-13, 0.999999, 17.778, 1.68825, -25.5035 )
+
+[node name="StaticBody" type="StaticBody" parent="window_door"]
+transform = Transform( 1, 1.51557e-28, -1.35525e-20, 3.02918e-27, 1, -2.71051e-20, -3.38813e-21, 0, 1, 0, 0, 0 )
+script = ExtResource( 4 )
+locked_sound = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="window_door/StaticBody"]
+shape = SubResource( 3 )
 
 [node name="Side Wall Floor 2-2" type="CSGBox" parent="."]
 transform = Transform( 1.12414e-09, 2.60106e-14, -14.5039, 8.00391e-09, -8.12272, 3.3946e-19, -0.0299082, -6.92021e-07, -7.37297e-07, 17.5396, 18.5903, -25.4359 )
