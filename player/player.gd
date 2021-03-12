@@ -7,8 +7,8 @@ var time : int = 100
 # Physics
 export var moveSpeed : float = 8.0
 export var acceleration : float = 5.0
-export var jumpForce : float = 10.0
-export var gravity : float = 25.0
+export var jumpForce : float = 9.8
+export var gravity : float = 25
 
 # Camera Angles
 var minLookAngle : float = -90.0
@@ -20,7 +20,8 @@ var velocity : Vector3 = Vector3()
 var mouseDelta : Vector2 = Vector2()
 
 # components
-onready var camera : Camera = get_node("Camera")
+onready var head = $Head
+onready var camera : Camera = $Head/Camera
 
 ### Functions ###
 
@@ -56,15 +57,15 @@ func _physics_process(delta):
 	var relativeDir = ( forward * input.y + right * input.x )
 	
 	# Set velocity
-	velocity.x = relativeDir.x * moveSpeed
-	velocity.z = relativeDir.z * moveSpeed
+	velocity.x = relativeDir.x * moveSpeed 
+	velocity.z = relativeDir.z * moveSpeed 
 	
 	# Apply gravity
 	velocity.y -= gravity * delta
 	
 	# Player Jump
 	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y += jumpForce
+		velocity.y = jumpForce
 		
 	# Player movement
 	velocity = move_and_slide(velocity, Vector3.UP)
