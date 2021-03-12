@@ -133,10 +133,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219529, 0, 35.0621 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.306108, 1.34327, -5.49181 )
 
 [node name="Medical Trolley2" parent="Environment/props/tower" instance=ExtResource( 8 )]
-transform = Transform( -8.04633e-08, 0, 0.75, -0.619677, 0.394327, -6.64817e-08, -0.422493, -0.578365, -4.53269e-08, -1.14923, 1.45515, -2.10381 )
+transform = Transform( 0.134679, -0.664361, 0.194114, -0.0360873, 0.178015, 0.724444, -0.736925, -0.130135, -7.90606e-08, -2.9814, 2.07199, -2.10381 )
 
 [node name="Bed_5" parent="Environment/props/tower" instance=ExtResource( 5 )]
-transform = Transform( 0.0556963, -0.0737529, 0.872634, 0.410535, 0.584812, 0.0375863, -0.597126, 0.39519, 0.107235, -1.41129, -0.245359, -1.25644 )
+transform = Transform( 0.26964, -0.212804, 0.773416, 0.410535, 0.584812, 0.0375863, -0.535682, 0.34107, 0.418111, -1.41129, -0.245359, -1.25644 )
 
 [node name="horse" parent="Environment/props" instance=ExtResource( 10 )]
 transform = Transform( 0.0874163, 0, -0.121895, 0, 0.15, 0, 0.121895, 0, 0.0874163, -35.7835, -1.88722, 8.66011 )

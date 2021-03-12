@@ -61,13 +61,13 @@ func _physics_process(delta):
 	# Apply gravity
 	velocity.y -= gravity * delta
 	
-	# Player movement
-	velocity = move_and_slide(velocity, Vector3.UP)
-	
 	# Player Jump
 	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y = jumpForce
+		velocity.y += jumpForce
 		
+	# Player movement
+	velocity = move_and_slide(velocity, Vector3.UP)
+
 func _process(delta):
 	
 	# X-axis Camera Rotation
