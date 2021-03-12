@@ -5,14 +5,15 @@ extends KinematicBody
 var time : int = 100
 
 # Physics
-var moveSpeed : float = 8.0
-var jumpForce : float = 10.0
-var gravity : float = 25.0
+export var moveSpeed : float = 8.0
+export var acceleration : float = 5.0
+export var jumpForce : float = 10.0
+export var gravity : float = 25.0
 
 # Camera Angles
 var minLookAngle : float = -90.0
 var maxLookAngle : float = 90.0
-var lookSensitivity : float = 10.0
+export var lookSensitivity : float = 10.0
 
 # vectors
 var velocity : Vector3 = Vector3()
