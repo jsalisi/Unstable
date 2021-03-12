@@ -53,7 +53,7 @@ height = 16.0
 depth = 58.3392
 
 [node name="Light Bulb" type="OmniLight" parent="Environment"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2041, -0.100565, -12.7941 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2041, -1.05447, -12.7941 )
 light_color = Color( 0.188235, 0.458824, 0.458824, 1 )
 light_energy = 10.62
 light_indirect_energy = 0.0
