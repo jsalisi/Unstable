@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/UI/UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/ward/walls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/bed/Bed_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://objects/bed/Hospital_Screen.tscn" type="PackedScene" id=6]
@@ -144,62 +145,7 @@ transform = Transform( 0.0874163, 0, -0.121895, 0, 0.15, 0, 0.121895, 0, 0.08741
 [node name="prison" parent="Environment" instance=ExtResource( 11 )]
 transform = Transform( -1.22392e-07, 0, 2.8, 0, 2.8, 0, -2.8, 0, -1.22392e-07, -40.3125, -2.60567, 26.111 )
 
-[node name="UI" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InteractionLabel" type="Label" parent="UI"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -31.0
-text = "Press E to interact"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ActionLabel" type="Label" parent="UI"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -59.0
-margin_bottom = -28.0
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="UI"]
-margin_right = 1024.0
-margin_bottom = 600.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="UI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -164.0
-margin_top = 1.0
-margin_right = 2.0
-margin_bottom = 212.0
-text = "Controls:
-
-	WASD - Move
-	Space - Jump
-	G - Reset Level
-"
-align = 3
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="UI" parent="." instance=ExtResource( 3 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )

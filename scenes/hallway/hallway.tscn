@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/UI/UI.tscn" type="PackedScene" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[sub_resource type="ShaderMaterial" id=3]
+
+[node name="Hallway" type="Spatial"]
+
+[node name="Floor" type="CSGCombiner" parent="."]
+use_collision = true
+
+[node name="Floor-1" type="CSGBox" parent="Floor"]
+material_override = SubResource( 1 )
+width = 40.0
+height = 0.25
+depth = 5.0
+material = SubResource( 2 )
+
+[node name="Floor-2E" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 2.5 )
+material_override = SubResource( 1 )
+width = 5.0
+height = 0.25
+depth = 10.0
+material = SubResource( 2 )
+
+[node name="Floor-2W" type="CSGBox" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 2.5 )
+material_override = SubResource( 1 )
+width = 5.0
+height = 0.25
+depth = 10.0
+material = SubResource( 2 )
+
+[node name="Ceiling" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+use_collision = true
+
+[node name="Ceiling-1" type="CSGBox" parent="Ceiling"]
+material_override = SubResource( 1 )
+width = 40.0
+height = 0.25
+depth = 5.0
+material = SubResource( 2 )
+
+[node name="Ceiling-2E" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 2.5 )
+material_override = SubResource( 1 )
+width = 5.0
+height = 0.25
+depth = 10.0
+material = SubResource( 2 )
+
+[node name="Ceiling-2W" type="CSGBox" parent="Ceiling"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 2.5 )
+material_override = SubResource( 1 )
+width = 5.0
+height = 0.25
+depth = 10.0
+material = SubResource( 2 )
+
+[node name="Outer Walls" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
+material_override = SubResource( 3 )
+use_collision = true
+
+[node name="Wall-1" type="CSGBox" parent="Outer Walls"]
+material_override = SubResource( 1 )
+width = 40.0
+height = 5.0
+depth = 6.0
+material = SubResource( 2 )
+
+[node name="Wall-2E" type="CSGBox" parent="Outer Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 2 )
+material_override = SubResource( 1 )
+width = 6.0
+height = 5.0
+depth = 11.0
+material = SubResource( 2 )
+
+[node name="Wall-2W" type="CSGBox" parent="Outer Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 2 )
+material_override = SubResource( 1 )
+width = 6.0
+height = 5.0
+depth = 11.0
+material = SubResource( 2 )
+
+[node name="Inner Walls" type="CSGCombiner" parent="Outer Walls"]
+material_override = SubResource( 3 )
+operation = 2
+
+[node name="Wall-1" type="CSGBox" parent="Outer Walls/Inner Walls"]
+material_override = SubResource( 1 )
+width = 40.0
+height = 6.0
+depth = 5.0
+material = SubResource( 2 )
+
+[node name="Wall-2E" type="CSGBox" parent="Outer Walls/Inner Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 3.5 )
+material_override = SubResource( 1 )
+width = 5.0
+height = 6.0
+depth = 12.0
+material = SubResource( 2 )
+
+[node name="Wall-2W" type="CSGBox" parent="Outer Walls/Inner Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 3.5 )
+material_override = SubResource( 1 )
+width = 5.0
+height = 6.0
+depth = 12.0
+material = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.139, 0 )
+
+[node name="UI" parent="." instance=ExtResource( 2 )]
