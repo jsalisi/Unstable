@@ -123,3 +123,9 @@ material = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.139, 0 )
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera-E" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2.5, 9 )
+
+[node name="Camera-W" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.5, 9 )
